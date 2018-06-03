@@ -22,7 +22,7 @@ module.exports = (app) => {
 
 
 
-    // Gacebook Auth
+    // Facebook Auth
 
 
 

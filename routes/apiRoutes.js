@@ -52,6 +52,7 @@ module.exports = (app) => {
 
 
 
+    /// splite the temple
     app.get(
         '/', 
         (req, res) => {
@@ -88,7 +89,7 @@ module.exports = (app) => {
                 res.send('Not logged' )
         }) 
 
-    
+    // OK
     // GET all restaurants    
     app.get('/api/restaurants', (req, res) => {
 
@@ -109,6 +110,7 @@ module.exports = (app) => {
             .catch(err => res.status(500).send(err))
     });
 
+    // OK
     // GET specified restaurant information
     app.get('/api/restaurant/:id', (req, res) => {
       
@@ -124,6 +126,7 @@ module.exports = (app) => {
     });
 
 
+    // OK
     // GET specified menu information
     app.get('/api/restaurant/:restid/menu/review/:menuid', (req, res) => {
       
@@ -142,7 +145,7 @@ module.exports = (app) => {
 
 
 
-
+    // OK
     // Add specified restaurant's review
     app.put('/api/restaurant/review/:id', (req, res) => {
 
@@ -183,7 +186,7 @@ module.exports = (app) => {
         });
     });
 
-    ///
+    // OK
     // Add specified menu's review
     app.put('/api/restaurant/:restid/menu/review/:menuid', (req, res) => {
 
@@ -203,20 +206,17 @@ module.exports = (app) => {
             if(req.body.id) newReview.userID = req.body.id
             newReview.date = new Date().toISOString().substring(0,10)
 
+            const menu = restaurant.menu.find( item => item.menuID === req.params.menuid )
 
-            //const menu = restaurant.menu.find( item => item.menuID === req.params.menuid )
-
-            restaurant.menu.find( item => item.menuID === req.params.menuid )
-                .reviews.push(newReview)
+            menu.reviews.push(newReview)
 
             // calculate avg rating
             let total = 0
-            restaurant.menu.find( item => item.menuID === req.params.menuid )
-                .reviews.forEach(review => {
-                    total += review.rating
+            menu.reviews.forEach(review => {
+                total += review.rating
             });
 
-            restaurant.menu.find( item => item.menuID === req.params.menuid ).rating = ( total / restaurant.me.length )
+            menu.rating = ( total / menu.reviews.length )
 
             // update
             restaurant.save( (err) => {

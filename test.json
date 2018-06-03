@@ -1,0 +1,284 @@
+[
+    {
+        "tel" : "905-123-1234",
+        "address": [
+            "117 Cross Ave, Oakville, ON",
+            "L6J 2W6"
+        ],
+        "type": [],
+        "hour": [
+            "11:00",
+            "21:00"
+        ],
+        "restaurantID": 100100010001,
+        "name": "Wasabi & Teriyaki",
+        "atmosphere": [
+            "Casual",
+            "Cosy"
+        ],
+        "currency": "CAD",
+        "tax": 13,
+        "rating": 4.5,
+        "reviews": [
+            {
+                "userID": "bri1200",
+                "name": "Patric",
+                "rating": 4,
+                "review": "We ordered Bento Box, Fried Calamari and Spicy Noodles Soup.",
+                "date": "2018-03-13"
+            },
+            {
+                "userID": "luaados12",
+                "name": "Sponder",
+                "rating": 5,
+                "review": "For the price and portion and quality, you can't beat this place!!",
+                "date": "2018-04-11"
+            }
+        ],
+        "menu": [
+            {
+                "menuID": 1000,
+                "name": "Dynamite Roll",
+                "price": 10,
+                "raing": 4,
+                "reviews": [
+                    {
+                        "userID": "bri1200",
+                        "name": "Patric",
+                        "rating": 3,
+                        "review": "Food was great and for a low price service was fast and the people were kind",
+                        "date": "2018-03-13"
+                    },
+                    {
+                        "userID": "luaados12",
+                        "name": "Sponder",
+                        "rating": 5,
+                        "review": "Cheap and woderful",
+                        "date": "2018-03-31"
+                    }
+                ]
+            },
+            {
+                "menuID": 1001,
+                "name": "Mountain Roll",
+                "price": 9.5,
+                "raing": 4.5,
+                "reviews": [
+                    {
+                        "userID": "dreik91",
+                        "name": "Mikhail",
+                        "rating": 5,
+                        "review": "Small place with great food and prices.",
+                        "date": "2018-04-22"
+                    },
+                    {
+                        "userID": "luaados12",
+                        "name": "Sponder",
+                        "rating": 4,
+                        "review": "Mountain Roll : Cheap and woderful",
+                        "date": "2018-03-31"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tel" : "905-123-6587",
+        "address": [
+            "187 Cross Ave, Oakville, ON",
+            "L6J 2W7"
+        ],
+        "type": [],
+        "hour": [
+            "11:30",
+            "21:45"
+        ],
+        "restaurantID": 100100010021,
+        "name": "Ami Sushi",
+        "atmosphere": [
+            "Casual",
+            "Cosy"
+        ],
+        "currency": "CAD",
+        "tax": 13,
+        "rating": 5,
+        "reviews": [
+            {
+                "userID": "canoakvil9",
+                "name": "Jay",
+                "rating": 5,
+                "review": "Luv Gyoza (crispy deep fried), Pork Wontons (5 pieces)",
+                "date": "2018-03-14"
+            },
+            {
+                "userID": "usa11s12",
+                "name": "Simpson",
+                "rating": 5,
+                "review": "I generally have the tofu teriyaki or a roll set with green tea.",
+                "date": "2018-04-08"
+            }
+        ],
+        "menu": [
+            {
+                "menuID": 1010,
+                "name": "California Roll",
+                "price": 7.9,
+                "raing": 3.5,
+                "reviews": [
+                    {
+                        "userID": "ziussyh",
+                        "name": "Andres",
+                        "rating": 3,
+                        "review": "Food was great and for a low price service was fast and the people were kind",
+                        "date": "2018-03-13"
+                    },
+                    {
+                        "userID": "qqqise43",
+                        "name": "Iniesta",
+                        "rating": 4,
+                        "review": "Cheap and woderful",
+                        "date": "2018-03-31"
+                    }
+                ]
+            },
+            {
+                "menuID": 1020,
+                "name": "Binoo Set",
+                "price": 6.8,
+                "raing": 4.3,
+                "reviews": [
+                    {
+                        "userID": "ikkaon321",
+                        "name": "Kim",
+                        "rating": 5,
+                        "review": "Hot and sweet",
+                        "date": "2018-04-25"
+                    },
+                    {
+                        "userID": "zlatan10",
+                        "name": "Zlatan",
+                        "rating": 4,
+                        "review": "The service is bad, nobody cares what do you want or need. Impossible to call for a server.",
+                        "date": "2018-03-30"
+                    },
+                    {
+                        "userID": "leomessi10",
+                        "name": "Messi",
+                        "rating": 4,
+                        "review": "excellent food",
+                        "date": "2018-03-20"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tel" : "905-123-2209",
+        "address": [
+            "187 Cross Ave #7, Oakville, ON"
+        ],
+        "type": [
+            "L6J 2W7"
+        ],
+        "hour": [
+            "10:00",
+            "23:00"
+        ],
+        "restaurantID": 100100010000,
+        "name": "OWL of Minerva",
+        "currency": "CAD",
+        "tax": 13,
+        "rating": 4.7,
+        "reviews": [
+            {
+                "userID": "runningman34",
+                "name": "ParkDong",
+                "rating": 4,
+                "review": "My son and I went for dinner. I ordered the spicy tofu soup with pork and my son had beef bibimbap that was not spicy. The dishes were still sizzling when when brought to our table. We also received the pickled vegetable. We especially like the pickled cucumber. It is sweet and sour with a hint of hot spice.",
+                "date": "2018-05-03"
+            },
+            {
+                "userID": "shydfhgt",
+                "name": "Jingsu",
+                "rating": 5,
+                "review": "This is, by far, one of the best locations of The Owl I have been to. The food is consistently good, and the service is quick! Meal portions are pretty big and reasonably priced, so I'll definitely be coming here all the time. It's also conveniently located right in front of Oakville GO.",
+                "date": "2018-05-05"
+            },
+            {
+                "userID": "jjanga_87",
+                "name": "LeeMinsu",
+                "rating": 5,
+                "review": "Great korean food and customer service here!  Sports authentic korean dishes that use healthy and simple ingredients with awesome taste.  Good selection on their menu and you get free side dishes with your order.  Corn water is also served, great place to get a satisfying meal!",
+                "date": "2018-05-08"
+            }
+        ],
+        "menu": [
+            {
+                "menuID": 1000,
+                "name": "Bibimbap",
+                "price": 10,
+                "raing": 4,
+                "reviews": [
+                    {
+                        "userID": "sliderh_90",
+                        "name": "LeeChunsu",
+                        "rating": 3,
+                        "review": "Good Korean food with large portions at good prices.",
+                        "date": "2018-04-29"
+                    },
+                    {
+                        "userID": "ammou33",
+                        "name": "ChoYangGu",
+                        "rating": 5,
+                        "review": "Good service good food and good price.",
+                        "date": "2018-05-03"
+                    }
+                ]
+            },
+            {
+                "menuID": 1010,
+                "name": "KamJaTang",
+                "price": 9.5,
+                "raing": 2.5,
+                "reviews": [
+                    {
+                        "userID": "sunoksun",
+                        "name": "ChoiDongho",
+                        "rating": 1,
+                        "review": "Too spicy, awful",
+                        "time": "2018-05-11"
+                    },
+                    {
+                        "userID": "jsjsdui4",
+                        "name": "Ahnuslo",
+                        "rating": 4,
+                        "review": "Great food",
+                        "time": "2018-05-01"
+                    }
+                ]
+            },
+            {
+                "menuID": 1020,
+                "name": "Jjamppong",
+                "price": 12.5,
+                "raing": 4.5,
+                "reviews": [
+                    {
+                        "userID": "nicecode",
+                        "name": "Ben",
+                        "rating": 5,
+                        "review": "The food is always tasty and filling. Good value and quality for the price.",
+                        "time": "2018-05-21"
+                    },
+                    {
+                        "userID": "sevi_ddink3",
+                        "name": "Ramkuma",
+                        "rating": 4,
+                        "review": "Good service.  Decent food.  Pub like.",
+                        "time": "2018-05-20"
+                    }
+                ]
+            }
+        ]
+    }
+]

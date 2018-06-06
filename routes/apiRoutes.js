@@ -1,12 +1,25 @@
+
+
+
 const Restaurant    = require('../models/Restaurant')
+const Region        = require('../models/Region')
+
+
+
 
 module.exports = (app) => {
+
+
+    app.set('views', __dirname + '.\\..\\views');
+    app.set('view engine', 'ejs');
+
 
     app.get(
         '/welcome',
         (req, res) => {
+            res.header('result', 'success') // only for android app
             res.send(`
-                <div>Welcome - ${req.user.name}</div>
+                <div>Welcome</div>
                 <div><a href='/logout'>Log out</a></div>
 
 
@@ -26,27 +39,7 @@ module.exports = (app) => {
     app.get(
         '/signup',
         (req, res) => {
-            res.send(`
-                <h2>Sign Up</h2>
-                <form method="post" action="/signup">
-                    <div>
-                        <label>Username</label>
-                        <input type="text" name="username" autofocus autocomplete="off" required />
-                    </div>
-                    <div> 
-                        <label>Password</label>
-                        <input type="password" name="password"  required />
-                    </div>
-                    
-                    <div> 
-                        <label>Display Name</label>
-                        <input type="text" name="display"  required />
-                    </div>
-                    <div>
-                        <input type="submit" value="Sign up" />
-                    </div>    
-                </form>
-            `)
+            res.render('signup',{error:req.flash('error')})
         }
     )
 
@@ -56,8 +49,7 @@ module.exports = (app) => {
     app.get(
         '/', 
         (req, res) => {
-            //res.send('Welcome, ' + req.user.name)
-
+            res.header('result', 'fail')        // only for android app
             res.send(`
                 <form method="post" action="/auth/login">
                     <div>
@@ -91,6 +83,9 @@ module.exports = (app) => {
 
     // OK
     // GET all restaurants    
+    // Do not call this api if the number of restaurants is larger than large number 
+    // because of the performance
+    // this returns everything of the restaurant
     app.get('/api/restaurants', (req, res) => {
 
         /*
@@ -111,9 +106,28 @@ module.exports = (app) => {
     });
 
     // OK
+    // GET all restaurants in the specified region    
+    app.get('/api/restaurants/:regionID', (req, res) => {
+
+      
+        console.log( 'findMultiByRegionID : ' + req.params.regionID )
+
+        Restaurant.findMultiByRegionID( req.params.regionID )
+            .then( ( restaurants ) => {
+                if( !restaurants.length )
+                    return res.status(404).send({ err: 'Restaurant not found' })
+                res.json(restaurants)
+            })
+            .catch(err => res.status(500).send(err))
+    });
+
+
+
+    // OK
     // GET specified restaurant information
     app.get('/api/restaurant/:id', (req, res) => {
-      
+
+
         Restaurant.findOneByRestaurantID( req.params.id )
             .then( ( restaurant ) => {
 
@@ -129,7 +143,7 @@ module.exports = (app) => {
     // OK
     // GET specified menu information
     app.get('/api/restaurant/:restid/menu/review/:menuid', (req, res) => {
-      
+ 
         Restaurant.findOneByRestaurantID( req.params.restid )
             .then( ( restaurant ) => {
 
@@ -141,7 +155,20 @@ module.exports = (app) => {
             })
             .catch( err => res.status(500).send(err))
 
-    });
+    })
+
+
+    app.get('/api/regions', (req, res) => {
+
+        Region.findAll()
+            .then( ( regions ) => {
+                if( !regions.length )
+                    return res.status(404).send({ err: 'Region not found' })
+                res.json(regions)
+            })
+            .catch(err => res.status(500).send(err))
+    })
+
 
 
 

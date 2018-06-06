@@ -1,5 +1,6 @@
 const express       = require('express')
 const session       = require('express-session')
+const flash         = require('connect-flash')
 const passport      = require('passport')
 const bodyParser    = require('body-parser')
 const mongoose      = require('mongoose')
@@ -7,9 +8,11 @@ const keys          = require('./config/keys')
 
 require('./models/User')
 require('./models/Restaurant')
+require('./models/Region');
 require('./services/passport')
 
 const app = express()
+app.use(flash())
 app.use(session( {
 
     // http://html5around.com/wordpress/tutorials/node-js%EC%97%90%EC%84%9C-%EC%84%B8%EC%85%98sessioin-%EA%B4%80%EB%A6%AC-%EB%B0%A9%EB%B2%95/

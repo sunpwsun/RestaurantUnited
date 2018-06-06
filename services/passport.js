@@ -9,7 +9,7 @@ const User = mongoose.model('users')
 
 // 세션에 기록
 passport.serializeUser((user, done) => {
-    console.log('serialize')
+    console.log('serialize - ' + user.id)
     done( null, user.id )
 })
 
@@ -27,6 +27,8 @@ passport.deserializeUser((id, done) => {
 /// facebook 추가
 
 
+
+
 passport.use(
     new GoogleStrategy(
         {
@@ -38,7 +40,7 @@ passport.use(
 
             User.findOne( {from:'Google', userid: profile.id })
                 .then( existingUser => {
-                    console.log('B')
+console.log('B')
                     if( existingUser) {
                         // Already exists the user
                         console.log('C')
@@ -57,7 +59,7 @@ passport.use(
     )
 )
 
-passport.use(
+passport.use( 'local',
     new LocalStrategy(
         (username, password, done) => {
             User.findOne( {from: 'Local', userid:username}, function(err, user) {
@@ -67,10 +69,19 @@ passport.use(
                 if( !user )
                     return done( null, false, { message: 'Incorrect Username'} )    /// Incorrect Username or Password로 수정할 것
                 //if( !user.validPassword(password) )
+                /*
                 if( user.password !== password)
                     return done( null, false, { message: 'Incorrect Password'} )    /// Incorrect Username or Password로 수정할 것
+                */
+                user.checkPassword(password, function(err,isMatch) {
+                    if(err)
+                        return done(err)
+                    if(isMatch)
+                        return done(null,user)
+                    else   
+                        return done(null,false, {message:'Incorrect Password'})
+                })
 
-                return done( null, user)
             })
 
          
